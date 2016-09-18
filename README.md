@@ -9,11 +9,11 @@ There are already available some great tools for making impressive presentations
 - effective
 - functional
 
-toolkit to create 3D enabled presentations. Although, there is a temptation to move always in 3D with a 3D enabled software, [I found more evidence](http://agostontorok.github.io/research/torok_agoston_thesis.pdf) for the functionality of 2D navigation. Yet, there are cases when 3D change of place is essential. This tool was motivated one of these usecases: to _experiment_ with ways to present my doctoral thesis about VR experiments. I felt that the ideal presentation is 80 % Keynote style and 20 % Powerpoint slides, where the zoom-in and out functions of Prezi is used to convey hierarchical or temporal relations. Therefore, this tool is based on these impressions, featuring:
+toolkit to create 3D enabled presentations. Although, there is a temptation to move always in 3D with a 3D enabled software, [I found more evidence](http://agostontorok.github.io/research/torok_agoston_thesis.pdf) for the functionality of 2D navigation. I felt that the ideal presentation is 80 % Keynote style and 20 % Powerpoint slides, where the zoom-in and out functions of Prezi is used to convey hierarchical or temporal relations. Yet, there are cases when 3D change of place is essential. This tool was motivated one of these usecases: to _experiment_ with ways to present my doctoral thesis about VR experiments. Therefore, I aimed to create a flexible environment where I can mix 2D and 3D based on results of usability studies and my impressions, featuring:
 
 1. Slide transitions are optional
-2. The slides does not need to overlap for some transitions (unlike in Prezi)
-3. Playing with the near and far clipping plane objects can appear and disappear with changing the camera position
+2. The slides do not need to overlap for some transitions (unlike in Prezi)
+3. Playing with the near and far clipping plane, objects can appear and disappear without changing the camera position
 4. Sounds can be added to slides
 5. Easy and intelligent editing of slideshow in [Unity3D](https://unity3d.com/)
 
