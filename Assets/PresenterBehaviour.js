@@ -2,16 +2,15 @@ public
 var currSlide = 0;
 public
 var slides: GameObject[];
-public
-var sections: GameObject[];
 private
-var startTime: float;
+var sections: GameObject[];
 private
 var slidesNum: int;
 
+
 function Start() {
-	// set the camera field of view to be compatible with the screen and keep the FOVhorizontal constant
-	camera.fieldOfView = camera.fieldOfView * 16/9 * 1/camera.aspect;
+    // set the camera field of view to be compatible with the screen and keep the FOVhorizontal constant
+    camera.fieldOfView = camera.fieldOfView * 16 / 9 * 1 / camera.aspect;
 
     /*
 	We use two tags to reference and organize slides (scenes) : Slide and Section
@@ -39,18 +38,16 @@ function Start() {
 
 
 function Update() {
-	/*
-	You can use the LEFT and RIGHT keys to navigate between slides
-	*/
+    /*
+    You can use the LEFT and RIGHT keys to navigate between slides
+    */
 
     if (Input.GetKeyDown(KeyCode.RightArrow)) {
         if (currSlide < slidesNum - 1) { currSlide += 1; } //slidenumber has to be in the range of slides
-        startTime = Time.time;
     }
 
     if (Input.GetKeyDown(KeyCode.LeftArrow)) {
         if (currSlide > 0) { currSlide -= 1; } //slidenumber has to be in the range of slides
-        startTime = Time.time;
     }
 
     /*
@@ -64,7 +61,7 @@ function Update() {
 	 	-  skybox
 
     */
-    
+
 
     /// property inheriting
     RenderSettings.skybox = slides[currSlide].camera.GetComponent(Skybox).material;
@@ -74,11 +71,12 @@ function Update() {
 
     /// transition controller
     var transitionTime = slides[currSlide].GetComponent(Attributes).transitionTime;
-    var distCovered = (Time.time - startTime) / transitionTime;
-    var fracJourney = distCovered;
+    
+
     if (transitionTime > 0) {
-        transform.position = Vector3.Lerp(transform.position, slides[currSlide].transform.position, fracJourney + .15);
-        transform.rotation = Quaternion.Lerp(transform.rotation, slides[currSlide].transform.rotation, fracJourney);
+    	// introducing a small asynchrony between the translation and the rotation
+        transform.position = Vector3.Lerp(transform.position, slides[currSlide].transform.position, Time.deltaTime / transitionTime * 1.15);
+        transform.rotation = Quaternion.Lerp(transform.rotation, slides[currSlide].transform.rotation, Time.deltaTime / transitionTime);
     } else {
         transform.position = slides[currSlide].transform.position;
         transform.rotation = slides[currSlide].transform.rotation;

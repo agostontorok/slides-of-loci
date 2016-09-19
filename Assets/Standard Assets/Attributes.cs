@@ -4,7 +4,7 @@ using System.Collections;
 public class Attributes : MonoBehaviour {
 
 	// properties with defaults
-	public float transitionTime = 10;
+	public float transitionTime = 1;
 	public bool currentSlide = false;
 	public AudioClip audioClip;
 	private AudioSource audioSource;
