@@ -3,7 +3,7 @@
 
 ## Motivation
 
-There are already available some great tools for making impressive presentations. [Microsoft Powerpoint](https://products.office.com/en-US/powerpoint), [Apple Keynote](http://www.apple.com/keynote/), and [Prezi](https://prezi.com/) all have some superb feature. However a effective and functional 3D presentation tool that is easy to use for everyone is lacking for a long time. In __Slides of loci__, that got it's name after _method of loci_, I aimed to provide a
+There are already available some great tools for making impressive presentations. [Microsoft Powerpoint](https://products.office.com/en-US/powerpoint), [Apple Keynote](http://www.apple.com/keynote/), and [Prezi](https://prezi.com/) all have some superb features. However an effective and functional 3D presentation tool that is easy to use for everyone is lacking for a long time. In __Slides of loci__, that got it's name after _method of loci_, I aimed to provide a
 
 - simple
 - effective
@@ -31,7 +31,7 @@ First you, drag-n-drop the ActiveSlideView and a Section prefab from the prefab 
 
 ### Sections
 
-Sections are helping you to handle a lot of slides when you don't want to bother with renaming them. Sections are read in __alphabetical order__ during presentation, therefore I suggest to rename them 1. Section, 2. Section etc. when dealing with more sections. Sections are effective if, for example, you wnat to present information related to 2 places one after the other. Sections don't have scripts attached, they only bear the __"Section" tag__ as definitive feature.
+Sections are helping you to handle a lot of slides when you don't want to bother with renaming them. Sections are read in __alphabetical order__ during presentation, therefore I suggest to rename them 1. First section's name, 2. Second section's name etc. when dealing with more sections. Sections are effective if, for example, you wnat to present information related to 2 places one after the other. Sections don't have scripts attached, they only bear the __"Section" tag__ as definitive feature.
 
 ![Section with "Section" tag](Docs/Screenshot 2016-09-18 11.18.33.png)
 
@@ -43,7 +43,7 @@ Slides have attributes that you can set for visiting them:
 
 - You can assign a sound as AudioClip, that is going to played when you visit the slide.
 - You can set the timing of the transition when visiting the slide (Note, for now timing and the size of the object/distance is related)
-- You can add a custom skybox to the slide and so can basically teleport the viewer
+- You can add a custom skybox to the slide and so you can basically teleport the viewer
 - You can switch the camera of the slide on/off during editing and can see what you will see during presentation
 
 ![Slide with switchable camera](Docs/Screenshot 2016-09-18 11.30.16.png)
