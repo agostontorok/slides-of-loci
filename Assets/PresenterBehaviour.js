@@ -10,7 +10,7 @@ var slidesNum: int;
 
 function Start() {
     // set the camera field of view to be compatible with the screen and keep the FOVhorizontal constant
-    camera.fieldOfView = camera.fieldOfView * 16 / 9 * 1 / camera.aspect;
+    GetComponent.<Camera>().fieldOfView = GetComponent.<Camera>().fieldOfView * 16 / 9 * 1 / GetComponent.<Camera>().aspect;
 
     /*
 	We use two tags to reference and organize slides (scenes) : Slide and Section
@@ -29,7 +29,7 @@ function Start() {
     for (var i = 0; i < sections.Length; i++) {
         for (var child: Transform in sections[i].transform) {
             if (child.gameObject.tag == "Slide") {
-                child.gameObject.camera.enabled = false; // disable all cameras on start
+                child.gameObject.GetComponent.<Camera>().enabled = false; // disable all cameras on start
                 slides += [child.gameObject];
             }
         }
@@ -43,6 +43,10 @@ function Update() {
     */
 
     if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        if (currSlide < slidesNum - 1) { currSlide += 1; } //slidenumber has to be in the range of slides
+    }
+
+    if (Input.GetKeyDown(KeyCode.Space)) {
         if (currSlide < slidesNum - 1) { currSlide += 1; } //slidenumber has to be in the range of slides
     }
 
@@ -64,9 +68,9 @@ function Update() {
 
 
     /// property inheriting
-    RenderSettings.skybox = slides[currSlide].camera.GetComponent(Skybox).material;
-    camera.nearClipPlane = slides[currSlide].camera.nearClipPlane;
-    camera.farClipPlane = slides[currSlide].camera.farClipPlane;
+    RenderSettings.skybox = slides[currSlide].GetComponent.<Camera>().GetComponent(Skybox).material;
+    GetComponent.<Camera>().nearClipPlane = slides[currSlide].GetComponent.<Camera>().nearClipPlane;
+    GetComponent.<Camera>().farClipPlane = slides[currSlide].GetComponent.<Camera>().farClipPlane;
 
 
     /// transition controller
