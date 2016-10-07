@@ -52,6 +52,8 @@ Slides have attributes that you can set for visiting them:
 
 Slide of loci is still in experimental phase, this means it is open to change, development and new features. If you feel you can contribute, don't hesitate to create a Issue here or drop an email to me (info: [https://agostontorok.github.io](https://agostontorok.github.io)). 
 
+IMPORTANT: GPL licence applies to the tool and not to your presentation, so I'm happy to know what you created, but you are free to use it for your private, internal presentations too.
+
 Good luck!
 
 Agoston
