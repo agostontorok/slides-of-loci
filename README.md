@@ -1,6 +1,9 @@
 <h1 align="center"> Slides of loci </h1>
 <h4 align="center"> A presentation tool for functional and effective 3D presentations </h4>
 
+## Examples
+[My presentation at the NLP meetup](http://agostontorok.github.io/research/nlp_meetup_synetiq_mediaresearch/)
+
 ## Motivation
 
 There are already available some great tools for making impressive presentations. [Microsoft Powerpoint](https://products.office.com/en-US/powerpoint), [Apple Keynote](http://www.apple.com/keynote/), and [Prezi](https://prezi.com/) all have some superb features. However an effective and functional 3D presentation tool that is easy to use for everyone is lacking for a long time. In __Slides of loci__, that got it's name after _method of loci_, I aimed to provide a
