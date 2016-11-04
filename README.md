@@ -3,6 +3,7 @@
 
 ## Examples
 [My presentation at the NLP meetup](http://agostontorok.github.io/research/nlp_meetup_synetiq_mediaresearch/)
+
 [My talk at IEEE CogInfoCom2016 on Human Computer Interfaces](http://agostontorok.github.io/research/coginfocom2016/)
 
 ## Motivation
