@@ -1,4 +1,6 @@
 public
+var pathToSlides = "";
+public
 var currSlide = 0;
 public
 var slides: GameObject[];
@@ -26,11 +28,24 @@ function Start() {
     sections = GameObject.FindGameObjectsWithTag("Section");
     System.Array.Sort(sections, Compare);
 
+    // Get all slides in the folder
+    // var info: String[] = System.IO.Directory.GetFiles("E:/Git/slides-of-loci/Assets/Coginfocom2017/Slides/coginfocom2017_slides/", "*.png");
+
+
     for (var i = 0; i < sections.Length; i++) {
         for (var child: Transform in sections[i].transform) {
             if (child.gameObject.tag == "Slide") {
                 child.gameObject.GetComponent.<Camera>().enabled = false; // disable all cameras on start
                 slides += [child.gameObject];
+                var filePath: String = pathToSlides + slides.length + ".png";
+
+                if (System.IO.File.Exists(filePath))     {
+                    fileData = System.IO.File.ReadAllBytes(filePath);
+                    var tex: Texture2D;
+                    tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                    tex.LoadImage(fileData);
+                    child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
+                }
             }
         }
     }
