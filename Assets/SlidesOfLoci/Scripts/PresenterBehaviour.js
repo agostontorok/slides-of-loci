@@ -38,13 +38,18 @@ function Start() {
                 child.gameObject.GetComponent.<Camera>().enabled = false; // disable all cameras on start
                 slides += [child.gameObject];
                 var filePath: String = pathToSlides + slides.length + ".png";
+                var resourceName: String = "Dia" + slides.length;
+                if (Resources.Load(resourceName, Texture2D))     {
+                // if (System.IO.File.Exists(filePath))     {
+                    // fileData = System.IO.File.ReadAllBytes(filePath);
+                    // var tex: Texture2D;
+                    // tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                    // tex.LoadImage(fileData);
 
-                if (System.IO.File.Exists(filePath))     {
-                    fileData = System.IO.File.ReadAllBytes(filePath);
-                    var tex: Texture2D;
-                    tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-                    tex.LoadImage(fileData);
-                    child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
+                    tex = Resources.Load(resourceName, Texture2D);
+                    if(child.childCount > 0){
+                        child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
+                    }
                 }
             }
         }

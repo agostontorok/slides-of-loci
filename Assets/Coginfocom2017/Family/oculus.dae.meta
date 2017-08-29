@@ -3,7 +3,7 @@ guid: 5a39efb55fc464041bd62fa068b1d4c7
 timeCreated: 1503671207
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Component_2
     100002: ID19
@@ -27,6 +27,15 @@ ModelImporter:
     100038: oculus-rift
     100040: skp_camera_Last_Saved_SketchUp_View
     100042: skphNnOU8
+    100044: Component
+    100046: ID105
+    100048: ID21
+    100050: ID31
+    100052: ID47
+    100054: ID73
+    100056: ID81
+    100058: ID89
+    100060: ID97
     400000: Component_2
     400002: ID19
     400004: ID27
@@ -49,6 +58,15 @@ ModelImporter:
     400038: oculus-rift
     400040: skp_camera_Last_Saved_SketchUp_View
     400042: skphNnOU8
+    400044: Component
+    400046: ID105
+    400048: ID21
+    400050: ID31
+    400052: ID47
+    400054: ID73
+    400056: ID81
+    400058: ID89
+    400060: ID97
     2300000: ID19
     2300002: ID27
     2300004: ID33
@@ -61,6 +79,14 @@ ModelImporter:
     2300018: ID83
     2300020: Obj_000001
     2300022: Obj_000002
+    2300024: ID105
+    2300026: ID21
+    2300028: ID31
+    2300030: ID47
+    2300032: ID73
+    2300034: ID81
+    2300036: ID89
+    2300038: ID97
     3300000: ID19
     3300002: ID27
     3300004: ID33
@@ -73,6 +99,14 @@ ModelImporter:
     3300018: ID83
     3300020: Obj_000001
     3300022: Obj_000002
+    3300024: ID105
+    3300026: ID21
+    3300028: ID31
+    3300030: ID47
+    3300032: ID73
+    3300034: ID81
+    3300036: ID89
+    3300038: ID97
     4300000: Obj_000001
     4300002: ID19
     4300004: ID27
@@ -85,6 +119,14 @@ ModelImporter:
     4300018: ID71
     4300020: ID77
     4300022: ID83
+    4300024: ID21
+    4300026: ID31
+    4300028: ID47
+    4300030: ID73
+    4300032: ID81
+    4300034: ID89
+    4300036: ID97
+    4300038: ID105
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -108,6 +150,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -115,7 +158,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -131,6 +177,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
