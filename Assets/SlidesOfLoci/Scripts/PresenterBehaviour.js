@@ -1,6 +1,4 @@
 public
-var pathToSlides = "";
-public
 var currSlide = 0;
 public
 var slides: GameObject[];
@@ -37,18 +35,12 @@ function Start() {
             if (child.gameObject.tag == "Slide") {
                 child.gameObject.GetComponent.<Camera>().enabled = false; // disable all cameras on start
                 slides += [child.gameObject];
-                var filePath: String = pathToSlides + slides.length + ".png";
-                var resourceName: String = "Dia" + slides.length;
-                if (Resources.Load(resourceName, Texture2D))     {
-                // if (System.IO.File.Exists(filePath))     {
-                    // fileData = System.IO.File.ReadAllBytes(filePath);
-                    // var tex: Texture2D;
-                    // tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-                    // tex.LoadImage(fileData);
+                var resource: String = "Dia" + slides.length;
 
-                    tex = Resources.Load(resourceName, Texture2D);
+                if (Resources.Load(resource))     {
+                    var tex = Resources.Load(resource);
                     if(child.childCount > 0){
-                        child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
+                    	child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
                     }
                 }
             }
@@ -63,15 +55,15 @@ function Update() {
     */
 
     if (Input.GetKeyDown(KeyCode.RightArrow)) {
-        if (currSlide < slidesNum - 1) { currSlide += 1; } //slidenumber has to be in the range of slides
+        if (currSlide < slidesNum - 1) { currSlide += 1;} //slidenumber has to be in the range of slides
     }
 
     if (Input.GetKeyDown(KeyCode.Space)) {
-        if (currSlide < slidesNum - 1) { currSlide += 1; } //slidenumber has to be in the range of slides
+        if (currSlide < slidesNum - 1) { currSlide += 1;} //slidenumber has to be in the range of slides
     }
 
     if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-        if (currSlide > 0) { currSlide -= 1; } //slidenumber has to be in the range of slides
+        if (currSlide > 0) { currSlide -= 1;} //slidenumber has to be in the range of slides
     }
 
     /*
@@ -96,15 +88,22 @@ function Update() {
     /// transition controller
     var transitionTime = slides[currSlide].GetComponent(Attributes).transitionTime;
     
-
-    if (transitionTime > 0) {
-    	// introducing a small asynchrony between the translation and the rotation
-        transform.position = Vector3.Lerp(transform.position, slides[currSlide].transform.position, Time.deltaTime / transitionTime * 1.15);
-        transform.rotation = Quaternion.Lerp(transform.rotation, slides[currSlide].transform.rotation, Time.deltaTime / transitionTime);
-    } else {
-        transform.position = slides[currSlide].transform.position;
-        transform.rotation = slides[currSlide].transform.rotation;
+    if (Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightCommand) || 
+    	Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) 
+    {
+    	// enable MouseLook script to work and you can look around
+    	print("command button pressed");
     }
+    else {
+		if (transitionTime > 0) {
+			// introducing a small asynchrony between the translation and the rotation
+		    transform.position = Vector3.Lerp(transform.position, slides[currSlide].transform.position, Time.deltaTime / transitionTime * 1.15);
+		    transform.rotation = Quaternion.Lerp(transform.localRotation, slides[currSlide].transform.localRotation, Time.deltaTime / transitionTime);
+	    } else {
+	        transform.position = slides[currSlide].transform.position;
+	        transform.rotation = slides[currSlide].transform.rotation;
+	    }  
+	}  
 }
 
 
@@ -112,3 +111,4 @@ function Compare(go1: GameObject, go2: GameObject): int {
     // compare function to sort the sections
     return go1.name.CompareTo(go2.name);
 }
+
