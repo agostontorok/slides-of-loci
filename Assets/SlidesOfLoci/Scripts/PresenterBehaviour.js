@@ -6,9 +6,14 @@ private
 var sections: GameObject[];
 private
 var slidesNum: int;
+var mouseLook;
+
 
 
 function Start() {
+    // assign the mouselook script to the variable
+    mouseLook = GetComponent(MouseLook);
+
     // set the camera field of view to be compatible with the screen and keep the FOVhorizontal constant
     GetComponent.<Camera>().fieldOfView = GetComponent.<Camera>().fieldOfView * 16 / 9 * 1 / GetComponent.<Camera>().aspect;
 
@@ -98,12 +103,25 @@ function Update() {
 		if (transitionTime > 0) {
 			// introducing a small asynchrony between the translation and the rotation
 		    transform.position = Vector3.Lerp(transform.position, slides[currSlide].transform.position, Time.deltaTime / transitionTime * 1.15);
-		    transform.rotation = Quaternion.Lerp(transform.localRotation, slides[currSlide].transform.localRotation, Time.deltaTime / transitionTime);
+		    transform.rotation = Quaternion.Lerp(transform.rotation, slides[currSlide].transform.rotation, Time.deltaTime / transitionTime);
 	    } else {
 	        transform.position = slides[currSlide].transform.position;
 	        transform.rotation = slides[currSlide].transform.rotation;
 	    }  
-	}  
+	}
+
+    if (Input.GetKeyDown(KeyCode.LeftCommand) || Input.GetKeyDown(KeyCode.RightCommand) || 
+        Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) 
+    {
+        // enable MouseLook script to work and you can look around
+        mouseLook.enabled = true;
+    } 
+    if (Input.GetKeyUp(KeyCode.LeftCommand) || Input.GetKeyDown(KeyCode.RightCommand) || 
+        Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) 
+    {
+        // disable MouseLook script 
+        mouseLook.enabled = false;
+    }  
 }
 
 
