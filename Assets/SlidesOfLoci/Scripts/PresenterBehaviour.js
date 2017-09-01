@@ -42,12 +42,12 @@ function Start() {
                 slides += [child.gameObject];
                 var resource: String = "Dia" + slides.length;
 
-                if (Resources.Load(resource))     {
+                /*if (Resources.Load(resource))     {
                     var tex = Resources.Load(resource);
                     if(child.childCount > 0){
                     	child.GetChild(0).GetComponent.<Renderer>().material.mainTexture = tex;
                     }
-                }
+                }*/
             }
         }
     }
