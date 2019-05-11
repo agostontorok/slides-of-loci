@@ -24,6 +24,8 @@ public partial class PresenterBehaviour : MonoBehaviour
            */
         this.slidesNum = GameObject.FindGameObjectsWithTag("Slide").Length;
         this.sections = GameObject.FindGameObjectsWithTag("Section");
+
+        Debug.Log(this.slidesNum );
         System.Array.Sort(this.sections, this.Compare);
         int i = 0;
         while (i < this.sections.Length)
@@ -32,12 +34,14 @@ public partial class PresenterBehaviour : MonoBehaviour
             {
                 if (child.gameObject.tag == "Slide")
                 {
+                    Debug.Log(child.gameObject.name);
                     child.gameObject.GetComponent<Camera>().enabled = false; // disable all cameras on start
                     this.slides.Add(child.gameObject);
                 }
             }
             i++;
         }
+        Debug.Log(this.slides);
     }
 
     public virtual void Update()
@@ -47,6 +51,7 @@ public partial class PresenterBehaviour : MonoBehaviour
         */
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            Debug.Log("RightArrow has been pressed");
             if (this.currSlide < (this.slidesNum - 1))
             {
                 this.currSlide = this.currSlide + 1; //slidenumber has to be in the range of slides
@@ -54,6 +59,7 @@ public partial class PresenterBehaviour : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space has been pressed");
             if (this.currSlide < (this.slidesNum - 1))
             {
                 this.currSlide = this.currSlide + 1; //slidenumber has to be in the range of slides
@@ -61,6 +67,7 @@ public partial class PresenterBehaviour : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            Debug.Log("LeftArrow has been pressed");
             if (this.currSlide > 0)
             {
                 this.currSlide = this.currSlide - 1; //slidenumber has to be in the range of slides
