@@ -32,13 +32,13 @@ After installing [Unity3D](https://unity3d.com/) and [cloning my git repository]
 
 First you, drag-n-drop the ActiveSlideView and a Section prefab from the prefab folder to the Scene hierarchy. All other objects in the hierarchy should be deleted. ActiveSlideView will be the eye of the presenter, this is a camera that travels between slides/scenes in the order you see __in the hierarchy__ this means that simply by changing the order of your slides __inside__ a section you change their order during presentation. You don't have to do anything with ActiveSlideView, just be sure you have it on your scene.
 
-![The scene with the prefabs](Docs/Screenshot 2016-09-18 11.14.51.png)
+![The scene with the prefabs](Docs/2019-05-1200_05_26.png)
 
 ### Sections
 
 Sections are helping you to handle a lot of slides when you don't want to bother with renaming them. Sections are read in __alphabetical order__ during presentation, therefore I suggest to rename them 1. First section's name, 2. Second section's name etc. when dealing with more sections. Sections are effective if, for example, you wnat to present information related to 2 places one after the other. Sections don't have scripts attached, they only bear the __"Section" tag__ as definitive feature.
 
-![Section with "Section" tag](Docs/Screenshot 2016-09-18 11.18.33.png)
+![Section with "Section" tag](Docs/2019-05-1200_06_23.png)
 
 ### Slides
 
@@ -51,7 +51,7 @@ Slides have attributes that you can set for visiting them:
 - You can add a custom skybox to the slide and so you can basically teleport the viewer
 - You can switch the camera of the slide on/off during editing and can see what you will see during presentation
 
-![Slide with switchable camera](Docs/Screenshot 2016-09-18 11.30.16.png)
+![Slide with switchable camera](Docs/2019-05-1200_08_13.png)
 
 ### Remarks
 
