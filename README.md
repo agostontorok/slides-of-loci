@@ -14,35 +14,35 @@ There are already available some great tools for making impressive presentations
 - effective
 - functional
 
-toolkit to create 3D enabled presentations. Although, there is a temptation to move always in 3D with a 3D enabled software, [I found more evidence](http://agostontorok.github.io/research/torok_agoston_thesis.pdf) for the functionality of 2D navigation. I felt that the ideal presentation is 80 % Keynote style and 20 % Powerpoint slides, where the zoom-in and out functions of Prezi is used to convey hierarchical or temporal relations. Yet, there are cases when 3D change of place is essential. This tool was motivated one of these usecases: to _experiment_ with ways to present my doctoral thesis about VR experiments. Therefore, I aimed to create a flexible environment where I can mix 2D and 3D, based on results of usability studies and my impressions, featuring:
+toolkit to create 3D enabled presentations. Although, there is a temptation to move always in 3D with a 3D enabled software, [in my research I found more evidence](http://agostontorok.github.io/research/torok_agoston_thesis.pdf) for the functionality of 2D navigation. I felt that the ideal presentation is 80 % Keynote style and 20 % Powerpoint slides, where the zoom-in and out functions of Prezi is used to convey hierarchical or temporal relations. Yet, there are cases when 3D change of place is essential. This tool was motivated one of these usecases: to _experiment_ with ways to present my doctoral thesis about VR experiments. Therefore, I aimed to create a flexible environment where I can mix 2D and 3D, based on results of usability studies, featuring:
 
 1. Slide transitions are optional
-2. The slides do not need to overlap for some transitions (unlike in Prezi)
+2. The slides do not need to overlap for some transitions
 3. Playing with the near and far clipping plane, objects can appear and disappear without changing the camera position
 4. Sounds can be added to slides
-5. Easy and intelligent editing of slideshow in [Unity3D](https://unity3d.com/)
+5. Easy editing of slideshow in [Unity3D](https://unity3d.com/)
 
 ## Tutorial
 
 ### Basic information
 
-After installing [Unity3D](https://unity3d.com/) and [cloning my git repository](https://github.com/agostontorok/slides-of-loci.git) to your computer, open Slides of loci as a unity project. For easier editing I created a tutorial presentation, on which I explain here the basic functionality of Slides of loci. The horizontal field of view of the slides will be fixed to the angle that you would see with 16:9 aspect, therefore I suggest 16:9 aspect ratio for the Game view tab.
+After installing [Unity3D](https://unity3d.com/) and [cloning this git repository](https://github.com/agostontorok/slides-of-loci.git) to your computer, open Slides of loci as a unity project. For easier editing I created a tutorial presentation, in which I explain the basic functionality of Slides of loci. The horizontal field of view of the slides will be fixed to the angle that you would see with 16:9 aspect, therefore I suggest 16:9 aspect ratio for the Game view tab.
 
 ### Prefabs
 
 First you, drag-n-drop the ActiveSlideView and a Section prefab from the prefab folder to the Scene hierarchy. All other objects in the hierarchy should be deleted. ActiveSlideView will be the eye of the presenter, this is a camera that travels between slides/scenes in the order you see __in the hierarchy__ this means that simply by changing the order of your slides __inside__ a section you change their order during presentation. You don't have to do anything with ActiveSlideView, just be sure you have it on your scene.
 
-![The scene with the prefabs](Docs/Screenshot 2016-09-18 11.14.51.png)
+![The scene with the prefabs](Docs/2019-05-1200_05_26.png)
 
 ### Sections
 
-Sections are helping you to handle a lot of slides when you don't want to bother with renaming them. Sections are read in __alphabetical order__ during presentation, therefore I suggest to rename them 1. First section's name, 2. Second section's name etc. when dealing with more sections. Sections are effective if, for example, you wnat to present information related to 2 places one after the other. Sections don't have scripts attached, they only bear the __"Section" tag__ as definitive feature.
+Sections are helping you to handle a lot of slides when you don't want to bother with renaming them. Sections are read in __alphabetical order__ during presentation, therefore I suggest to use numbering for them 1. X section, 2. Y section etc. when dealing with more sections. Sections are effective if, for example, you wnat to present information related to 2 places one after the other. Sections don't have scripts attached, they only bear the __"Section" tag__ as definitive feature.
 
-![Section with "Section" tag](Docs/Screenshot 2016-09-18 11.18.33.png)
+![Section with "Section" tag](Docs/2019-05-1200_06_23.png)
 
 ### Slides
 
-Slides are basically camera prespectives. They show what the ActiveSlideView will see once it reaches that slide. You can set the near and far clipping plane to modify the visibility of some objects. Playing with the clipping planes and the size of the object can help you create functional 3D scenes, that are [only visible from a certain angle](https://twistedsifter.files.wordpress.com/2012/05/shadow-kiss-meet-serendipity.jpg?w=600&h=382).
+Slides are basically camera prespectives. They show what the ActiveSlideView will see once it reaches that slide. You can set the near and far clipping plane to modify the visibility of some objects. Playing with the clipping planes and the size of the object can help you create functional 3D scenes, that are [only visible from a certain angle](https://twistedsifter.files.wordpress.com/2012/05/shadow-kiss-meet-serendipity.jpg?w=600&h=382). Now you have 3 basic slides available as prefabs: TextSlide, InteractiveSlide, ImageSlide (thanks for the UI additions to @SimonDarksideJ).
 
 Slides have attributes that you can set for visiting them:
 
@@ -51,7 +51,7 @@ Slides have attributes that you can set for visiting them:
 - You can add a custom skybox to the slide and so you can basically teleport the viewer
 - You can switch the camera of the slide on/off during editing and can see what you will see during presentation
 
-![Slide with switchable camera](Docs/Screenshot 2016-09-18 11.30.16.png)
+![Slide with switchable camera](Docs/2019-05-1200_08_13.png)
 
 ### Remarks
 
